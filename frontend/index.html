@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head><title>My App</title></head>
+<body>
+  <h1>Frontend is live</h1>
+  <p id="result">Calling backend...</p>
+  <script>
+    const backendUrl = "https://hotstar-clone-rishabh-cud8hefqced6frdp.westus3-01.azurewebsites.net/api/status";
+    fetch(backendUrl)
+      .then(r => r.json())
+      .then(d => document.getElementById("result").textContent = d.message)
+      .catch(e => document.getElementById("result").textContent = "Error: " + e);
+  </script>
+</body>
+</html>
